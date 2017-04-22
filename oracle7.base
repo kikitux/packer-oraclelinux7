@@ -117,7 +117,7 @@
       "yum install -y perl net-tools",
       "mount -o loop,ro linux.iso /media/dvd",
       "tar zxf /media/dvd/VMwareTools-*.tar.gz -C /tmp",
-      "/tmp/vmware-tools-distrib/vmware-install.pl -default",
+      "/tmp/vmware-tools-distrib/vmware-install.pl --force-install",
       "umount /media/dvd",
       "rm -fr /tmp/vmware-tools-distrib",
       "rm -f linux.iso",
