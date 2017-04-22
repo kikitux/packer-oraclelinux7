@@ -8,8 +8,7 @@ date:=$(shell date +%y.%m.%d 2>/dev/null | tee date.txt)
 ol7_uekr3:=$(shell curl -R -I http://public-yum.oracle.com/repo/OracleLinux/OL7/UEKR3/x86_64/repodata -o ol7_uekr3.txt 2>/dev/null)
 ol7_latest:=$(shell curl -R -I http://public-yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/repodata -o ol7_latest.txt 2>/dev/null)
 
-#BUILDER_TYPES = virtualbox vmware
-BUILDER_TYPES = virtualbox
+BUILDER_TYPES = virtualbox vmware
 TEMPLATE_FILES := $(wildcard *.json)
 BOX_FILENAMES := $(TEMPLATE_FILES:.json=.box)
 BOX_FILES := $(foreach builder, $(BUILDER_TYPES), $(foreach box_filename, $(BOX_FILENAMES), $(builder)/$(box_filename)))
