@@ -3,7 +3,7 @@
         "ssh_name": "root",
         "ssh_pass": "root",
         "vm_name": "oracle7-latest",
-	"compression" : 6
+	"compression" : "9"
     },
 
     "builders": [{
