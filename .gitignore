@@ -1,0 +1,5 @@
+*.vdi
+*~
+*.box
+packer-make/*/output-*
+*.txt
