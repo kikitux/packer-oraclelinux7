@@ -99,7 +99,7 @@
     "post-processors": [
         [{
       "type": "vagrant",
-      "keep_input_artifact": true,
+      "keep_input_artifact": false,
       "output": "{{.Provider}}/{{user `vm_name`}}.box",
       "compression_level": "{{user `compression`}}"
         },
