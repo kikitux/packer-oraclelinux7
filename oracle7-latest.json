@@ -1,5 +1,6 @@
 {
     "variables": {
+	"atlas_username": "kikitux",
         "ssh_name": "root",
         "ssh_pass": "root",
         "vm_name": "oracle7-latest",
@@ -95,13 +96,30 @@
        ]
   }
 ],
-  "post-processors": [
-    {
+    "post-processors": [
+        [{
       "type": "vagrant",
-      "only": ["virtualbox","vmware"],
-      "keep_input_artifact": false,
+      "keep_input_artifact": true,
       "output": "{{.Provider}}/{{user `vm_name`}}.box",
       "compression_level": "{{user `compression`}}"
-    }
-  ]
+        },
+        {
+      "type": "atlas",
+      "only": ["vmware-"],
+      "artifact": "{{user `atlas_username`}}/{{user `vm_name`}}",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+           "provider": "vmware_desktop"
+        }
+      },
+      {
+      "type": "atlas",
+      "only": ["virtualbox-iso"],
+      "artifact": "{{user `atlas_username`}}/{{user `vm_name`}}",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+          "provider": "virtualbox"
+       }
+      }]
+    ]	
 }
