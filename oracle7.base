@@ -5,7 +5,7 @@
         "hostname": "oracle7", 
         "vm_name": "oracle7",
         "isomd5": "5728ef4b431d28a2d4ad62dbdf5bf36d",
-        "isourl": "http://ftp.icm.edu.pl/pub/Linux/dist/oracle-linux/OL7/u1/x86_64/OracleLinux-R7-U1-Server-x86_64-dvd.iso",
+        "isourl": "http://mirrors.kernel.org/oracle/OL7/u1/x86_64/OracleLinux-R7-U1-Server-x86_64-dvd.iso",
         "rootfs"  : "ext4",
         "swapsize": "6000",
         "compression" : "6"
