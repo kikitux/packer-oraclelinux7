@@ -28,22 +28,22 @@ all: $(BOX_FILES)
 output-oracle7-ovf-virtualbox/oracle7.ovf: oracle7.base
 	@-rm -rf output-oracle7-ovf-virtualbox/
 	@-rm -f virtualbox/*.box
-	packer build -color=false -only virtualbox oracle7.base
+	packer build -force -only virtualbox oracle7.base
 
 output-oracle7-vmx-vmware/oracle7.vmx: oracle7.base
 	@-rm -rf output-oracle7-vmx-vmware/
 	@-rm -f vmware/*.box
-	packer build -color=false -only vmware oracle7.base
+	packer build -force -only vmware oracle7.base
 
 virtualbox/%.box: %.json output-oracle7-ovf-virtualbox/oracle7.ovf ol7_latest.txt ol7_uekr3.txt
 	-rm -f $@
 	@-mkdir -p $(@D)
-	packer build -only=$(@D) $<
+	packer build -force -only=$(@D) $<
 
 vmware/%.box: %.json output-oracle7-vmx-vmware/oracle7.vmx ol7_latest.txt ol7_uekr3.txt
 	-rm -f $@
 	@-mkdir -p $(@D)
-	packer build -only=$(@D) $<
+	packer build -force -only=$(@D) $<
 
 .PHONY: list
 list:
