@@ -1,6 +1,7 @@
 {
     "variables": {
-        "ssh_name": "root",
+        "atlas_username": "kikitux",
+	"ssh_name": "root",
         "ssh_pass": "root",
         "vm_name": "oracle7-preinstall",
 	"compression" : "9"
