@@ -47,23 +47,8 @@
     "type": "shell",
     "execute_command": "sh '{{ .Path }}'",
     "pause_before": "1s",
-    "inline": [
-      "[ -f /root/proxy.env ] && source /root/proxy.env",
-      "yum update -y",
-      "yum localinstall -y http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
-      "yum clean all",
-      "yum-config-manager --disable epel",
-      "reboot"
-       ]
-  },
-    {
-    "type": "shell",
-    "execute_command": "sh '{{ .Path }}'",
-    "pause_before": "10s",
-    "inline": [
-      "[ -f /root/proxy.env ] && source /root/proxy.env",
-      "echo your custom inline script",
-      "echo goes here"
+    "path": [
+           "scripts/latest.sh"
        ]
   },
     {

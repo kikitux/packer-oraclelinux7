@@ -1,5 +1,5 @@
 *.vdi
 *~
 *.box
-packer-make/*/output-*
 *.txt
+packer_cache/
