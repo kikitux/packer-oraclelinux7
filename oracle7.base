@@ -48,8 +48,8 @@
             "HOSTNAME={{user `hostname`}} ",
             "SWAPSIZE={{user `swapsize`}} ",
             "ROOTFS={{user `rootfs`}} ",
-            "net.ifnames=0 biosdevname=0 }},
             "LATEST={{user `latest`}} ",
+            "net.ifnames=0 biosdevname=0 ",	    
             "<enter>"
         ]
     },
@@ -74,9 +74,9 @@
             "HOSTNAME={{user `hostname`}} ",
             "SWAPSIZE={{user `swapsize`}} ",
             "ROOTFS={{user `rootfs`}} ",
-            "net.ifnames=0 biosdevname=0 ",
             "LATEST={{user `latest`}} ",
-            "<enter>"
+            "net.ifnames=0 biosdevname=0 ",
+	    "<enter>"
 	],
         "ssh_wait_timeout": "40m",
         "shutdown_command": "shutdown -h now",
