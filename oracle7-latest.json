@@ -47,7 +47,7 @@
     "type": "shell",
     "execute_command": "sh '{{ .Path }}'",
     "pause_before": "1s",
-    "path": [
+    "scripts": [
            "scripts/latest.sh"
        ]
   },
