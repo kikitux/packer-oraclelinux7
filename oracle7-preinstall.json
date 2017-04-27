@@ -11,7 +11,7 @@
         "name": "virtualbox",
         "type": "virtualbox-ovf",
         "guest_additions_mode": "disable",
-        "source_path": "output-oracle7-ovf-virtualbox/oracle7.ova",
+        "source_path": "output-oracle7-ovf-virtualbox/oracle7.ovf",
         "output_directory": "virtualbox/output-{{user `vm_name`}}",
         "vm_name": "{{user `vm_name`}}",
 	"headless": "true",

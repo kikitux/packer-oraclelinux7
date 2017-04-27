@@ -2,7 +2,6 @@
     "variables": {
         "ssh_name": "root",
         "ssh_pass": "root",
-        "atlas_username": "kikitux", 
         "hostname": "oracle7", 
         "vm_name": "oracle7",
         "isomd5": "5728ef4b431d28a2d4ad62dbdf5bf36d",
@@ -23,7 +22,6 @@
 	"guest_additions_mode": "upload",
 	"output_directory": "output-{{user `vm_name`}}-ovf-virtualbox",
         "vm_name": "{{user `vm_name`}}",
-        "format": "ova",
         "vboxmanage": [
            ["modifyvm", "{{.Name}}", "--vram", "32"],
            ["modifyvm", "{{.Name}}", "--memory", "4096"] 
@@ -157,16 +155,5 @@
       "true"
        ]
     }
-],
-    "post-processors": [
-      {
-      "type": "atlas",
-      "only": ["virtualbox"],
-      "artifact": "{{user `atlas_username`}}/{{user `vm_name`}}",
-      "artifact_type": "virtualbox.image",
-      "metadata": {
-          "provider": "virtualbox"
-       }
-      }
-    ]
+]
 }
